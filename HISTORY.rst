@@ -4,8 +4,7 @@ History
 -------
 1.1.0 (unreleased)
 ++++++++++++++++++
-* Run functions decorated with ``@run_async`` in webhook mode [Nachtalb]
-* Define per bot how many ``@async_run`` workers to use with ``ASYNC_WORKERS``  [Nachtalb]
+* Fix error on startup when using ``MESSAGEQUEUE_ENABLED`` [Nachatlb]
 
 1.0.0 (2017-05-25)
 ++++++++++++++++++
