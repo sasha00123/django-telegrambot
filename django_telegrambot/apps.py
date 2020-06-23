@@ -187,7 +187,8 @@ class DjangoTelegramBot(AppConfig):
                                               urllib3_proxy_kwargs=proxy['urllib3_proxy_kwargs'])
                         bot = telegram.Bot(token=token, request=request)
 
-                    dispatcher = Dispatcher(bot, None, workers=workers, use_context=True)
+                    pickle = PicklePersistence(filename='django_telegrambot.dat')
+                    dispatcher = Dispatcher(bot, None, workers=workers, use_context=True, persistence=pickle)
                     DjangoTelegramBot.dispatchers.append(dispatcher)
                     hookurl = '{}/{}/{}/'.format(webhook_site, webhook_base, token)
                     max_connections = b.get('WEBHOOK_MAX_CONNECTIONS', 40)
